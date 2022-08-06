@@ -1,0 +1,50 @@
+<template>
+  <lightning-card title="Template conditional rendering">
+    <div class="slds-form-element" slot="actions">
+      <label class="slds-checkbox_toggle slds-grid">
+        <span class="slds-form-element__label slds-m-bottom_none">
+          {dayTogglerLabel}
+        </span>
+        <input
+          type="checkbox"
+          class="dayToggler"
+          name="checkbox-toggle-15"
+          value="checkbox-toggle-15"
+          aria-describedby="checkbox-toggle-15"
+          checked={night}
+          onchange={handleDayTogglerChange}
+        />
+        <span
+          id="checkbox-toggle-15"
+          class="slds-checkbox_faux_container"
+          aria-live="assertive"
+        >
+          <span class="slds-checkbox_faux"></span>
+        </span>
+      </label>
+    </div>
+
+    <main class="slds-grid slds-gutters">
+      <div class="slds-col"></div>
+      <div class="timeContent slds-col slds-align_absolute-center">
+        <template if:true={night}>
+          <lightning-icon
+            icon-name="custom:custom10"
+            title="Night time"
+            size="large"
+          ></lightning-icon>
+          <p class="salutation">Good night!</p>
+        </template>
+        <template if:false={night}>
+          <lightning-icon
+            icon-name="custom:custom3"
+            title="Day time"
+            size="large"
+          ></lightning-icon>
+          <p class="salutation">Good day!</p>
+        </template>
+      </div>
+      <div class="slds-col"></div>
+    </main>
+  </lightning-card>
+</template>

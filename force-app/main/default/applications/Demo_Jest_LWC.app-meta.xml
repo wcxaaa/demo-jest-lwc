@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#0070D2</headerColor>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <description>Demo Jest LWC</description>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <label>Demo Jest LWC</label>
+    <navType>Console</navType>
+    <tabs>Demo_Jest_LWC</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Demo_Jest_LWC_UtilityBar</utilityBar>
+    <workspaceConfig>
+        <mappings>
+            <tab>Demo_Jest_LWC</tab>
+        </mappings>
+    </workspaceConfig>
+</CustomApplication>
