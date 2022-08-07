@@ -1,0 +1,7 @@
+.luckyNumbers {
+  flex-direction: column;
+}
+
+.luckyNumbersHolder {
+  flex-wrap: wrap;
+}

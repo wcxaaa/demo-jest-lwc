@@ -1,0 +1,63 @@
+<template>
+  <lightning-card title="Apex Imperative Data Fetching">
+    <div class="slds-form-element" slot="actions">
+      <lightning-button
+        variant="brand"
+        label="Generate"
+        title="Generate"
+        onclick={onGenerateClick}
+        class="slds-var-m-left_x-large btnGenerate"
+      ></lightning-button>
+    </div>
+    <header class="slds-grid slds-gutters slds-var-m-around_large control">
+      <div class="slds-col">
+        <lightning-slider
+          label="How many?"
+          value={luckyNumberConfig.count}
+          min="1"
+          max="10"
+          onchange={onCountChange}
+        ></lightning-slider>
+      </div>
+      <div class="slds-col">
+        <lightning-input
+          type="counter"
+          name="minNumber"
+          required
+          value={luckyNumberConfig.minValue}
+          label="min number"
+          max="99999999"
+          onchange={onMinNumberChange}
+        ></lightning-input>
+      </div>
+      <div class="slds-col">
+        <lightning-input
+          type="counter"
+          name="maxNumber"
+          required
+          value={luckyNumberConfig.maxValue}
+          label="max number"
+          max="99999999"
+          onchange={onMaxNumberChange}
+        ></lightning-input>
+      </div>
+    </header>
+    <main class="slds-grid slds-gutters slds-var-m-around_large luckyNumbers">
+      <h2>Your lucky numbers are</h2>
+      <div class="slds-col">
+        <ul
+          class="slds-align_absolute-center slds-text-heading_medium luckyNumbersHolder"
+        >
+          <template if:true={luckyNumberEmpty}>
+            <li class="slds-var-m-around_large noData">
+              Click the button to generate your lucky numbers.
+            </li>
+          </template>
+          <template for:each={displayingLuckyNumber} for:item="num">
+            <li class="slds-var-m-around_large" key={num.id}>{ num.number }</li>
+          </template>
+        </ul>
+      </div>
+    </main>
+  </lightning-card>
+</template>
