@@ -1,0 +1,26 @@
+<template>
+  <lightning-card title="Parent-Child Data Passing">
+    <header>
+      <h2 class="slds-var-m-left_large">{directorLabel}</h2>
+    </header>
+    <main class="crewCardHolder">
+      <template for:each={flatReadyState} for:item="state">
+        <c-demo-data-passing-child
+          key={state.id}
+          staff-name={state.name}
+          ready={state.ready}
+          onchangereadystate={onStaffReadyStateChange}
+        ></c-demo-data-passing-child>
+      </template>
+    </main>
+    <footer>
+      <lightning-button
+        variant="brand"
+        label="Action!"
+        title="Action!"
+        class="slds-var-m-around_small btnAction"
+        disabled={notAllReady}
+      ></lightning-button>
+    </footer>
+  </lightning-card>
+</template>

@@ -10,6 +10,9 @@ export default class DemoConditionalRendering extends LightningElement {
     return "☀️";
   }
 
+  /**
+   * @param { MouseEvent } e
+   */
   handleDayTogglerChange(e) {
     /** @type { HTMLInputElement } */
     const toggler = e.target;

@@ -9,6 +9,20 @@
       "env": {
         "node": true
       }
+    },
+    {
+      "files": ["*.js"],
+      "rules": {
+        "no-unused-vars": [
+          "warn",
+          {
+            "argsIgnorePattern": "^_",
+            "varsIgnorePattern": "^_",
+            "caughtErrorsIgnorePattern": "^_"
+          }
+        ],
+        "@lwc/lwc/no-api-reassignments": ["off", {}]
+      }
     }
   ]
 }
